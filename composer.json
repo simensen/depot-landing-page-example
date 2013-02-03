@@ -1,0 +1,5 @@
+{
+    "require": {
+        "depot/depot": "0.0.*@dev"
+    }
+}
