@@ -9,6 +9,11 @@ recent status updates and essays.
 Installation
 ------------
 
+Copy `app.ini.sample` to `app.ini` and change `entity_uri` to the entity
+that you would like to display.
+
+    cp app.ini.sample app.ini
+
 The dependencies for this example are managed by [Composer][3]. Download
 or clone this repository and then use Composer to install the dependencies.
 
