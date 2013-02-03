@@ -2,9 +2,13 @@
 
 require_once __DIR__.'/vendor/autoload.php';
 
-$config = parse_ini_file("app.ini");
+if (file_exists('app.ini')) {
+    $config = parse_ini_file("app.ini");
+} else {
+    $config = array();
+}
 
-$entityUri = isset($config['entity_uri']) ? $config['entity_uri'] : 'https://depot.tent.is';
+$entityUri = isset($config['entity_uri']) ? $config['entity_uri'] : 'https://tent.tent.is';
 
 $clientFactory = new Depot\Api\Client\ClientFactory;
 $client = $clientFactory->create();
