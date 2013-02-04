@@ -58,9 +58,10 @@ $statusPostListResponse = $client->posts()->getPosts($server, $statusPostCriteri
 <ul>
 <?php foreach ($essayPostListResponse->posts() as $post) { $content = $post->content(); ?>
     <li>
-        <?php if (isset($content['title'])) { ?><h3><?php echo $content['title']; ?></h3><?php } ?>
-        <?php if (isset($content['excerpt'])) { ?><div class="excerpt"><em>Excerpt: <?php echo $content['excerpt']; ?></em></div><?php } ?>
+        <?php if (!empty($content['title'])) { ?><h3><?php echo $content['title']; ?></h3><?php } ?>
+        <?php if (!empty($content['excerpt'])) { ?><div class="excerpt"><em>Excerpt: <?php echo $content['excerpt']; ?></em></div><?php } ?>
         <?php if (isset($content['body'])) { ?><div class="body"><?php echo $content['body']; ?></div><?php } ?>
+        <div>Published <?php echo date('r', $post->publishedAt()); ?></div>
     </li>
 <?php } ?>
 </ul>
